@@ -38,6 +38,7 @@
     >
       <main>
         <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
+        <p><b id="bold-text"></b></p>
         <p>Undangan Pernikahan</p>
         <h1>Ardi & Nengsih</h1>
         <p>Jum'at, 20 Desember 2024</p>
@@ -614,6 +615,20 @@
       namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ",");
 
       document.querySelector("#nama").value = nama;
+    </script>
+    <script>
+      // Fungsi untuk mengambil parameter dari URL
+      function getParameterByName(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+      const paramValue = getParameterByName("guest");
+      if (paramValue) {
+        document.getElementById("bold-text").innerText = paramValue;
+      } else {
+        const boldTextElement = document.getElementById("bold-text");
+        boldTextElement.parentNode.removeChild(boldTextElement);
+      }
     </script>
   </body>
 </html>
