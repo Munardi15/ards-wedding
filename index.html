@@ -466,6 +466,38 @@
             <ul class="list-group">
               <li class="list-group-item">
                 <div class="fw-bold">BCA</div>
+                <span id="bca-number">5490382820</span>
+                <span>Munardi</span>
+                <button onclick="copyToClipboard('bca-number')">Salin</button>
+              </li>
+              <li class="list-group-item">
+                <div class="fw-bold">MANDIRI</div>
+                <span id="mandiri-number">903684882263</span>
+                <span>Munardi</span>
+                <button onclick="copyToClipboard('mandiri-number')">
+                  Salin
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="gifts" class="gifts">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>ungkapan tanda kasih</span>
+            <h2>Kirim Hadiah</h2>
+          </div>
+        </div>
+
+        <div class="row justify-content-center text-center">
+          <div class="col-md-6">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="fw-bold">BCA</div>
                 5490382820 - Munardi
               </li>
               <li class="list-group-item">
@@ -476,7 +508,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <footer>
       <div class="container">
@@ -523,6 +555,25 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 
+    <script>
+      function copyToClipboard(elementId) {
+        var text = document.getElementById(elementId).innerText;
+
+        var tempTextArea = document.createElement("textarea");
+        tempTextArea.value = text;
+        document.body.appendChild(tempTextArea);
+
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+
+        // Menghapus textarea sementara
+        document.body.removeChild(tempTextArea);
+
+        // Memberikan pemberitahuan
+        alert("Nomor rekening telah disalin: " + text);
+      }
+    </script>
     <script>
       simplyCountdown(".simply-countdown", {
         year: 2024, // required
